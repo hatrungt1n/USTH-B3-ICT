@@ -1,2 +1,6 @@
-# USTH-B3-ICT-
-# USTH-B3-ICT-
+Student Info
+=========================
+
+* Student Name: Hà Trung Tín
+* Student ID: BI11-261 
+* Department: ICT
