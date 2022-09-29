@@ -11,6 +11,14 @@
     * {
       margin: 0;
     }
+
+    [data-tab-content] {
+      display: none;
+    }
+
+    .active[data-tab-content] {
+      display: block;
+    }
   </style>
 
   <body style="display: flex; flex-direction: column; gap: 10px">
@@ -39,8 +47,9 @@
         style="background-color: #5b9bd5; width: 30%; padding: 40px 20px"
       >
         <div
-          id="categ"
-          class="category1"
+          data-tab-target="#thumbnail1"
+          class="categ active"
+          id="category1"
           style="
             display: flex;
             justify-content: center;
@@ -54,8 +63,9 @@
           <h3 style="color: white">Category 1</h3>
         </div>
         <div
-          id="categ"
-          class="category2"
+          data-tab-target="#thumbnail2"
+          class="categ"
+          id="category2"
           style="
             display: flex;
             justify-content: center;
@@ -69,8 +79,9 @@
           <h3 style="color: white">Category 2</h3>
         </div>
         <div
-          id="categ"
-          class="category3"
+          data-tab-target="#thumbnail3"
+          class="categ"
+          id="category3"
           style="
             display: flex;
             justify-content: center;
@@ -84,7 +95,9 @@
           <h3 style="color: white">Category 3</h3>
         </div>
         <div
-          class="about"
+          data-tab-target="#about_student"
+          class="categ"
+          id="about"
           style="
             display: flex;
             justify-content: center;
@@ -112,11 +125,12 @@
         "
       >
         <div
-          id="Thumbnail1"
+          data-tab-content
+          class="thumbnail active"
+          id="thumbnail1"
           style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: 300px;
+            width: 300px;
             padding: 10px;
             margin: 20px 0;
             border: 1px solid;
@@ -133,11 +147,12 @@
         </div>
 
         <div
-          id="Thumbnail2"
+          data-tab-content
+          class="thumbnail"
+          id="thumbnail2"
           style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: 300px;
+            width: 300px;
             padding: 10px;
             margin: 20px 0;
             border: 1px solid;
@@ -154,11 +169,12 @@
         </div>
 
         <div
-          id="Thumbnail3"
+          data-tab-content
+          class="thumbnail"
+          id="thumbnail3"
           style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: 300px;
+            width: 300px;
             padding: 10px;
             margin: 20px 0;
             border: 1px solid;
@@ -174,7 +190,7 @@
           </a>
         </div>
 
-        <div id="about">
+        <div data-tab-content class="thumbnail" id="about_student">
           <h2 style="color: white">Student's name: Hà Trung Tín</h2>
         </div>
       </div>
@@ -194,48 +210,21 @@
   </body>
 
   <script>
-    const cate = document.querySelectorAll("categ");
-    const thumbnail1 = document.getElementById("Thumbnail1");
-    const thumbnail2 = document.getElementById("Thumbnail2");
-    const thumbnail3 = document.getElementById("Thumbnail3");
-    const about_id = document.getElementById("about");
+    const cates = document.querySelectorAll("[data-tab-target]");
+    const thumbnails = document.querySelectorAll("[data-tab-content]");
 
-    const category1 = document.querySelector(".category1");
-    const category2 = document.querySelector(".category2");
-    const category3 = document.querySelector(".category3");
-    const about = document.querySelector(".about");
-
-    thumbnail1.style.display = "block";
-    thumbnail2.style.display = "none";
-    thumbnail3.style.display = "none";
-    about_id.style.display = "none";
-
-    category1.addEventListener("click", () => {
-      thumbnail1.style.display = "block";
-      thumbnail2.style.display = "none";
-      thumbnail3.style.display = "none";
-      about_id.style.display = "none";
-    });
-
-    category2.addEventListener("click", () => {
-      thumbnail1.style.display = "none";
-      thumbnail2.style.display = "block";
-      thumbnail3.style.display = "none";
-      about_id.style.display = "none";
-    });
-
-    category3.addEventListener("click", () => {
-      thumbnail1.style.display = "none";
-      thumbnail2.style.display = "none";
-      thumbnail3.style.display = "block";
-      about_id.style.display = "none";
-    });
-
-    about.addEventListener("click", () => {
-      thumbnail1.style.display = "none";
-      thumbnail2.style.display = "none";
-      thumbnail3.style.display = "none";
-      about_id.style.display = "block";
+    cates.forEach((cate) => {
+      cate.addEventListener("click", () => {
+        const target = document.querySelector(cate.dataset.tabTarget);
+        thumbnails.forEach((thumbs) => {
+          thumbs.classList.remove("active");
+        });
+        cates.forEach((cate) => {
+          cate.classList.remove("active");
+        });
+        cate.classList.add("active");
+        target.classList.add("active");
+      });
     });
   </script>
 </html>
