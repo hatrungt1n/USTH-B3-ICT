@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+    }
+  </style>
+
+  <body style="display: flex; flex-direction: column; gap: 10px">
+    <header
+      style="
+        background-color: #5b9bd5;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h1 style="color: white">Banner</h1>
+    </header>
+
+    <main
+      style="
+        display: flex;
+        flex-direction: row;
+        height: calc(100vh - 170px);
+        gap: 10px;
+      "
+    >
+      <div
+        class="left-part"
+        style="background-color: #5b9bd5; width: 30%; padding: 40px 20px"
+      >
+        <div
+          id="categ"
+          class="category1"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #538135;
+            padding: 10px;
+            margin: 20px 0;
+            cursor: pointer;
+          "
+        >
+          <h3 style="color: white">Category 1</h3>
+        </div>
+        <div
+          id="categ"
+          class="category2"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #538135;
+            padding: 10px;
+            margin: 20px 0;
+            cursor: pointer;
+          "
+        >
+          <h3 style="color: white">Category 2</h3>
+        </div>
+        <div
+          id="categ"
+          class="category3"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #538135;
+            padding: 10px;
+            margin: 20px 0;
+            cursor: pointer;
+          "
+        >
+          <h3 style="color: white">Category 3</h3>
+        </div>
+        <div
+          class="about"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #538135;
+            padding: 10px;
+            margin: 20px 0;
+            cursor: pointer;
+          "
+        >
+          <h3 style="color: white">About</h3>
+        </div>
+      </div>
+
+      <div
+        class="right-part"
+        style="
+          background-color: #5b9bd5;
+          width: 70%;
+          padding: 40px 20px;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 20px;
+        "
+      >
+        <div
+          id="Thumbnail1"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid;
+          "
+        >
+          <a target="popup" href="images/bieber-coverstory.webp">
+            <img
+              src="images/bieber-coverstory.webp"
+              alt="picture1"
+              height="300"
+              width="300"
+            />
+          </a>
+        </div>
+
+        <div
+          id="Thumbnail2"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid;
+          "
+        >
+          <a target="popup" href="images/justin-bieber.jpg">
+            <img
+              src="images/justin-bieber.jpg"
+              alt="Forest"
+              height="300"
+              width="300"
+            />
+          </a>
+        </div>
+
+        <div
+          id="Thumbnail3"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid;
+          "
+        >
+          <a target="popup" href="images/Justin+Bieber.jpg">
+            <img
+              src="images/Justin+Bieber.jpg"
+              alt="Forest"
+              height="300"
+              width="300"
+            />
+          </a>
+        </div>
+
+        <div id="about">
+          <h2 style="color: white">Student's name: Hà Trung Tín</h2>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      style="
+        background-color: #5b9bd5;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h2 style="color: white">Copyright</h2>
+    </footer>
+  </body>
+
+  <script>
+    const cate = document.querySelectorAll("categ");
+    const thumbnail1 = document.getElementById("Thumbnail1");
+    const thumbnail2 = document.getElementById("Thumbnail2");
+    const thumbnail3 = document.getElementById("Thumbnail3");
+    const about_id = document.getElementById("about");
+
+    const category1 = document.querySelector(".category1");
+    const category2 = document.querySelector(".category2");
+    const category3 = document.querySelector(".category3");
+    const about = document.querySelector(".about");
+
+    thumbnail1.style.display = "block";
+    thumbnail2.style.display = "none";
+    thumbnail3.style.display = "none";
+    about_id.style.display = "none";
+
+    category1.addEventListener("click", () => {
+      thumbnail1.style.display = "block";
+      thumbnail2.style.display = "none";
+      thumbnail3.style.display = "none";
+      about_id.style.display = "none";
+    });
+
+    category2.addEventListener("click", () => {
+      thumbnail1.style.display = "none";
+      thumbnail2.style.display = "block";
+      thumbnail3.style.display = "none";
+      about_id.style.display = "none";
+    });
+
+    category3.addEventListener("click", () => {
+      thumbnail1.style.display = "none";
+      thumbnail2.style.display = "none";
+      thumbnail3.style.display = "block";
+      about_id.style.display = "none";
+    });
+
+    about.addEventListener("click", () => {
+      thumbnail1.style.display = "none";
+      thumbnail2.style.display = "none";
+      thumbnail3.style.display = "none";
+      about_id.style.display = "block";
+    });
+  </script>
+</html>
