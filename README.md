@@ -6,3 +6,5 @@ Student Info
 * Major: Infomation Technology and Communication
 * Course: Bachelor
 * Intake: 2020 - 2023
+
+Give me a star ⭐ Thank you ✨
