@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #1f497d;
+    }
+
+    td {
+      text-align: center;
+      vertical-align: middle;
+      background-color: #e9edf4;
+    }
+
+    table tr td:first-child:hover ~ td,
+    td:first-child:hover {
+      background-color: #d0d8e8;
+    }
+  </style>
+  <body>
+    <table style="width: 100%">
+      <tr>
+        <th>Subject</th>
+        <th>ETCS</th>
+      </tr>
+      <tr>
+        <td>Math</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Physics</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Chemistry</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>English</td>
+        <td>3</td>
+      </tr>
+    </table>
+  </body>
+</html>
